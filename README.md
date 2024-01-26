@@ -15,7 +15,7 @@
 <div align="center">
 
 [🏰[Project Page](https://github.com/open-compass/MathBench/)]
-[📚[LeaderBoard](https://github.com/open-compass/MathBench/index.html)]
+[📚[LeaderBoard](https://open-compass.github.io/MathBench/)]
 
 </div>
 
@@ -35,8 +35,7 @@ MathBench is an `All in One` math dataset for language model evaluation, with:
 
 ## 🌲Dataset Structure
 <div align="center">
- <img src="https://github.com/InternLM/InternLM-Math/assets/28834990/a5cc2887-5107-4f5a-b04b-48adf7be8349
-" width="600"/>
+ <img src="https://github.com/InternLM/InternLM-Math/assets/28834990/a5cc2887-5107-4f5a-b04b-48adf7be8349" width="600"/>
 </div>
 
 
