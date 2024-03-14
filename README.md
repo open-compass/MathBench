@@ -1,4 +1,4 @@
-# MathBench: A Comprehensive Multi-Level Difficulty Mathematics Evaluation Dataset
+# MathBench: Evaluating the Theory and Application Proficiency of LLMs with a Hierarchical Mathematics Benchmark
 
 <div align="center">
 
