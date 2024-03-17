@@ -44,21 +44,6 @@ We use zero-shot CoT set for multiple-choice questions and few-shot (8) CoT set 
 
 Here is the overall average result of **MathBench**:
 
-<!-- | Method                 | CE Average | Acc Average |
-|------------------------|------------|-------------|
-| Internlm2-Chat-7B      | 31.07      | 46.71       |
-| Internlm2-Chat-20B     | 40.89      | 54.67       |
-| Qwen-7B-Chat           | 24.78      | 39.32       |
-| Qwen-14B-Chat          | 35.07      | 51.73       |
-| Qwen-72B-Chat          | 45.63      | 60.40       |
-| Deepseek-7B-Chat       | 17.59      | 33.25       |
-| Deepseek-67B-Chat      | 40.52      | 52.64       |
-| Chatglm3-6B            | 17.41      | 33.80       |
-| Mammoth-7B             | 9.56       | 22.96       |
-| Mammoth-13B            | 16.11      | 31.22       |
-| Mammoth-70B            | 22.93      | 37.96       |
-| GPT-3.5-Turbo          | 31.45      | 52.04       |
-| GPT-4                  | 52.85      | 70.48       | -->
 
 | Models                      | ACC Average | CE Average |
 |-----------------------------|-------------|------------|
@@ -67,77 +52,64 @@ Here is the overall average result of **MathBench**:
 | Qwen-Max                    | 75.2        | 62.9       |
 | GLM4                        | 73.0        | 60.3       |
 | Claude-3-Opus               | 77.4        | 64.2       |
-| GPT-4                       | 78.8        | 68.9       |
+| GPT-4                       | **78.8**    | **68.9**   |
 | **Open-Source Chat Models** |             |            |
-| ChatGLM3-6B                 | 24.1        | 24.3       |
-| Yi-6B-Chat                  | 23.5        | 23.5       |
-| InternLM2-Chat-7B           | 42.7        | 42.7       |
-| Qwen-7B-Chat                | 34.3        | 34.3       |
-| Deepseek-7B-Chat            | 23.9        | 23.9       |
-| Baichuan2-13B-Chat          | 32.1        | 32.1       |
-| Qwen-14B-Chat               | 48.0        | 44.4       |
-| InternLM2-Chat-20B          | 47.4        | 47.4       |
-| Yi-34B-Chat                 | 39.0        | 39.0       |
-| Deepseek-67B-Chat           | 52.1        | 52.0       |
-| Qwen-72B-Chat               | 61.1        | 61.1       |
+| ChatGLM3-6B                 | 43.7        | 24.3       |
+| Yi-6B-Chat                  | 42.5        | 23.5       |
+| InternLM2-Chat-7B           | 59.3        | 42.7       |
+| Qwen-7B-Chat                | 51.8        | 34.3       |
+| Deepseek-7B-Chat            | 43.5        | 23.9       |
+| Baichuan2-13B-Chat          | 49.5        | 32.1       |
+| Qwen-14B-Chat               | 64.1        | 44.4       |
+| InternLM2-Chat-20B          | **64.7**    | **47.4**   |
+| Yi-34B-Chat                 | 54.9        | 39.0       |
+| Deepseek-67B-Chat           | 65.3        | 52.0       |
+| Qwen-72B-Chat               | **72.2**       | **61.1**       |
 | **Mathematical Models**     |             |            |
-| MammoTH-7B                  | 11.7        | 11.7       |
-| Metamath-Llemma-7B          | 25.1        | 25.1       |
-| InternLM2-Chat-Math-7B      | 46.0        | 46.0       |
-| Deepseek-Math-7B-Instruct   | 48.3        | 48.3       |
-| Deepseek-Math-7B-RL         | 58.8        | 58.7       |
-| MammoTH-13B                 | 20.2        | 20.2       |
-| InternLM2-Chat-Math-20B     | 51.8        | 51.8       |
-| MammoTH-70B                 | 34.2        | 34.2       |
+| MammoTH-7B                  | 28.5        | 11.7       |
+| Metamath-Llemma-7B          | 39.4        | 25.1       |
+| InternLM2-Chat-Math-7B      | 64.0        | 46.0       |
+| Deepseek-Math-7B-Instruct   | 63.9        | 48.3       |
+| Deepseek-Math-7B-RL         | **69.6**    | **58.7**   |
+| MammoTH-13B                 | 38.9        | 20.2       |
+| InternLM2-Chat-Math-20B     | 64.6        | 51.8       |
+| MammoTH-70B                 | 49.9        | 34.2       |
+
 
 
 Here is the CE result of **MathBench** with 5-level difficulty divisions🪜:
 
-<!-- | Model                  | Calculate | Primary | Middle | High   | College |
-|------------------------|-----------|---------|--------|--------|---------|
-| Internlm2-Chat-7B      | 53.00     | 67.67   | 25.00  | 14.34  | 6.34    |
-| Internlm2-Chat-20B     | 62.67     | 75.67   | 39.67  | 23.67  | 13.67   |
-| Qwen-7B-Chat           | 51.33     | 48.67   | 22.00  | 9.67   | 5.50    |
-| Qwen-14B-Chat          | 64.67     | 61.34   | 36.67  | 19.67  | 7.84    |
-| Qwen-72B-Chat          | 72.00     | 70.67   | 52.67  | 30.67  | 15.34   |
-| Deepseek-7B-Chat       | 46.00     | 45.67   | 5.00   | 3.67   | 1.84    |
-| Deepseek-67B-Chat      | 61.33     | 76.34   | 33.00  | 19.00  | 23.34   |
-| Chatglm3-6B            | 41.00     | 42.67   | 11.67  | 3.00   | 0.50    |
-| Mammoth-7B             | 26.67     | 24.33   | 3.00   | 1.34   | 1.00    |
-| Mammoth-13B            | 35.00     | 41.67   | 5.00   | 4.00   | 4.34    |
-| Mammoth-70B            | 35.67     | 60.67   | 11.00  | 8.34   | 5.34    |
-| GPT-3.5-Turbo          | 71.00     | 66.67   | 16.67  | 14.34  | 8.34    |
-| GPT-4                  | 73.00     | 89.34   | 52.34  | 33.00  | 26.67   | -->
 
-| Models                      | Arithmetic | Primary | Middle | High  | College | Average |
-|-----------------------------|------------|---------|--------|-------|---------|---------|
-| **API Models**              |            |         |        |       |         |         |
-| GPT-3.5                     | 70.3       | 67.9    | 39.3   | 30.6  | 32.2    | 48.1    |
-| Qwen-Max                    | 69.3       | 84.2    | 62.7   | 51.4  | 47.0    | 62.9    |
-| GLM4                        | 61.3       | 83.0    | 64.0   | 52.1  | 41.2    | 60.3    |
-| Claude-3-Opus               | **84.7**   | **86.1**| 63.5   | 48.2  | 38.7    | 64.2    |
-| GPT-4                       | 76.3       | 82.9    | **69.8**| **56.6**| **59.0**| **68.9**|
-| **Open-Source Chat Models** |            |         |        |       |         |         |
-| ChatGLM3-6B                 | 41.0       | 40.5    | 21.4   | 11.5  | 6.3     | 24.1    |
-| Yi-6B-Chat                  | 35.7       | 41.1    | 20.3   | 11.5  | 9.1     | 23.5    |
-| InternLM2-Chat-7B           | _53.0_     | _67.5_  | _41.0_ | _29.6_| _22.6_  | _42.7_  |
-| Qwen-7B-Chat                | 51.3       | 50.2    | 32.6   | 20.2  | 17.3    | 34.3    |
-| Deepseek-7B-Chat            | 46.0       | 39.3    | 15.5   | 9.6   | 9.2     | 23.9    |
-| Baichuan2-13B-Chat          | 46.0       | 54.2    | 29.5   | 16.6  | 14.3    | 32.1    |
-| Qwen-14B-Chat               | _64.7_     | 66.1    | _49.2_ | 32.8  | _27.2_  | _48.0_  |
-| InternLM2-Chat-20B          | 62.7       | _70.0_  | 47.4   | _33.7_| 23.3    | 47.4    |
-| Yi-34B-Chat                 | 51.0       | 64.8    | 38.0   | 23.2  | 17.8    | 39.0    |
-| Deepseek-67B-Chat           | 61.3       | 77.2    | 48.4   | 36.3  | 36.8    | 52.1    |
-| Qwen-72B-Chat               | _**72.0**_ | _80.1_  | _**64.8**_| _**47.8**_| 40.8    | _**61.1**_|
-| **Mathematical Models**     |            |         |        |       |         |         |
-| MammoTH-7B                  | 26.7       | 18.1    | 5.3    | 4.8   | 3.7     | 11.7    |
-| Metamath-Llemma-7B          | 48.7       | 35.3    | 16.1   | 15.5  | 10.1    | 25.1    |
-| InternLM2-Chat-Math-7B      | 53.7       | 66.0    | 49.0   | 34.3  | 26.9    | 46.0    |
-| Deepseek-Math-7B-Instruct   | 61.0       | 73.7    | 42.2   | 34.9  | 29.9    | 48.3    |
-| Deepseek-Math-7B-RL         | _67.7_     | _**80.8**_| _57.2_ | _45.4_| _**42.7**_| _58.8_  |
-| MammoTH-13B                 | 35.0       | 34.8    | 10.7   | 9.9   | 10.6    | 20.2    |
-| InternLM2-Chat-Math-20B     | 58.7       | 71.1    | 55.5   | 41.8  | 31.9    | 51.8    |
-| MammoTH-70B                 | 35.7       | 59.3    | 28.1   | 23.6  | 24.5    | 34.2    |
+| Models                      | Arithmetic | Primary | Middle | High  | College |
+|-----------------------------|------------|---------|--------|-------|---------|
+| **API Models**              |            |         |        |       |         |
+| GPT-3.5                     | 70.3       | 67.9    | 39.3   | 30.6  | 32.2    |
+| Qwen-Max                    | 69.3       | 84.2    | 62.7   | 51.4  | 47.0    |
+| GLM4                        | 61.3       | 83.0    | 64.0   | 52.1  | 41.2    |
+| Claude-3-Opus               | **84.7**   | **86.1**| 63.5   | 48.2  | 38.7    |
+| GPT-4                       | 76.3       | 82.9    | **69.8**| **56.6**| **59.0**|
+| **Open-Source Chat Models** |            |         |        |       |         |
+| ChatGLM3-6B                 | 41.0       | 40.5    | 21.4   | 11.5  | 6.3     |
+| Yi-6B-Chat                  | 35.7       | 41.1    | 20.3   | 11.5  | 9.1     |
+| InternLM2-Chat-7B           | 53.0       | 67.5    | 41.0   | 29.6  | 22.6    |
+| Qwen-7B-Chat                | 51.3       | 50.2    | 32.6   | 20.2  | 17.3    |
+| Deepseek-7B-Chat            | 46.0       | 39.3    | 15.5   | 9.6   | 9.2     |
+| Baichuan2-13B-Chat          | 46.0       | 54.2    | 29.5   | 16.6  | 14.3    |
+| Qwen-14B-Chat               | 64.7       | 66.1    | 49.2   | 32.8  | 27.2    |
+| InternLM2-Chat-20B          | 62.7       | 70.0    | 47.4   | 33.7  | 23.3    |
+| Yi-34B-Chat                 | 51.0       | 64.8    | 38.0   | 23.2  | 17.8    |
+| Deepseek-67B-Chat           | 61.3       | 77.2    | 48.4   | 36.3  | 36.8    |
+| Qwen-72B-Chat               | **72.0**   | **80.1**   | **64.8**| **47.8**| **40.8**    |
+| **Mathematical Models**     |            |         |        |       |         |
+| MammoTH-7B                  | 26.7       | 18.1    | 5.3    | 4.8   | 3.7     |
+| Metamath-Llemma-7B          | 48.7       | 35.3    | 16.1   | 15.5  | 10.1    |
+| InternLM2-Chat-Math-7B      | 53.7       | 66.0    | 49.0   | 34.3  | 26.9    |
+| Deepseek-Math-7B-Instruct   | 61.0       | 73.7    | 42.2   | 34.9  | 29.9    |
+| Deepseek-Math-7B-RL         | **67.7**   | **80.8**| **57.2** | **45.4**| **42.7**|
+| MammoTH-13B                 | 35.0       | 34.8    | 10.7   | 9.9   | 10.6    |
+| InternLM2-Chat-Math-20B     | 58.7       | 71.1    | 55.5   | 41.8  | 31.9    |
+| MammoTH-70B                 | 35.7       | 59.3    | 28.1   | 23.6  | 24.5    |
+
 
 
 ## 🔊Application Scores with Stages
