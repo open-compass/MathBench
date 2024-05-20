@@ -42,9 +42,9 @@ MathBench is an `All in One` math dataset for language model evaluation, with:
 ## 📒Model Performance
 We use zero-shot CoT set for multiple-choice questions and few-shot (8) CoT set for all textual questions. The results are shown in the following table, we present the results with common Accuracy and Circular Evaluation (CE) metrics. 
 
-Here is the overall average result of **MathBench**:
+<!-- Here is the overall average result of **MathBench**: -->
 
-
+<!-- 
 | Models                      | ACC Average | CE Average |
 |-----------------------------|-------------|------------|
 | **API Models**              |             |            |
@@ -73,11 +73,11 @@ Here is the overall average result of **MathBench**:
 | Deepseek-Math-7B-RL         | **69.6**    | **58.7**   |
 | MammoTH-13B                 | 38.9        | 20.2       |
 | InternLM2-Chat-Math-20B     | 64.6        | 51.8       |
-| MammoTH-70B                 | 49.9        | 34.2       |
+| MammoTH-70B                 | 49.9        | 34.2       | -->
 
 
 
-Here is the CE result of **MathBench** with 5-level difficulty divisions🪜:
+<!-- Here is the CE result of **MathBench** with 5-level difficulty divisions🪜:
 
 
 | Models                      | Arithmetic | Primary | Middle | High  | College |
@@ -108,15 +108,142 @@ Here is the CE result of **MathBench** with 5-level difficulty divisions🪜:
 | Deepseek-Math-7B-RL         | **67.7**   | **80.8**| **57.2** | **45.4**| **42.7**|
 | MammoTH-13B                 | 35.0       | 34.8    | 10.7   | 9.9   | 10.6    |
 | InternLM2-Chat-Math-20B     | 58.7       | 71.1    | 55.5   | 41.8  | 31.9    |
-| MammoTH-70B                 | 35.7       | 59.3    | 28.1   | 23.6  | 24.5    |
+| MammoTH-70B                 | 35.7       | 59.3    | 28.1   | 23.6  | 24.5    | -->
 
 
 
-## 🔊Application Scores with Stages
+Here is the CE result of **MathBench**, **MathBench-A** demonstrates the performance of the model on application problems
+
+<!-- | **Models**                | **Arith**   | **Primary** | **Middle**  | **High**    | **College** | **Avg.**    |
+| ------------------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
+| **Closed-source Models**  |             |             |             |             |             |             |
+| GPT-3.5                   | 70.3        | 69.0        | 27.7        | 17.3        | 17.0        | 40.3        |
+| Qwen-Max                  | 69.3        | 80.7        | 50.3        | 33.7        | 20.7        | 50.9        |
+| GLM4                      | 61.3        | 79.0        | 54.0        | 41.3        | 21.0        | 51.3        |
+| Claude-3-Opus             | **84.7**    | **85.3**    | 54.0        | 33.3        | 24.0        | 56.3        |
+| GPT-4                     | 76.3        | 80.3        | **61.3**    | **42.3**    | **38.3**    | **59.7**    |
+| **Open-source Models**    |             |             |             |             |             |             |
+| Yi-6B-Chat                | 35.7        | 36.0        | 7.3         | 3.7         | 1.3         | 16.8        |
+| ChatGLM3-6B               | 41.0        | 42.7        | 11.7        | 3.0         | 0.5         | 19.8        |
+| Deepseek-7B-Chat          | 46.0        | 45.7        | 5.0         | 3.7         | 1.8         | 20.4        |
+| Qwen-7B-Chat              | 51.3        | 48.7        | 22.0        | 9.7         | 5.5         | 27.4        |
+| InternLM2-Chat-7B         | <u>53.7</u> | <u>67.7</u> | <u>25.0</u> | <u>14.3</u> | <u>6.3</u>  | <u>33.4</u> |
+| Baichuan2-13B-Chat        | 46.0        | 50.3        | 14.7        | 3.3         | 3.7         | 23.6        |
+| Yi-34B-Chat               | 51.0        | 60.3        | 23.7        | 7.3         | 2.7         | 29.0        |
+| Qwen-14B-Chat             | <u>64.7</u> | 61.3        | 36.7        | 19.7        | 7.8         | 38.0        |
+| InternLM2-Chat-20B        | 62.7        | <u>75.7</u> | <u>39.7</u> | <u>23.7</u> | <u>13.7</u> | <u>43.1</u> |
+| Deepseek-67B-Chat         | 61.3        | <u>72.6</u> | 33.0        | 19.0        | 12.7        | 39.7        |
+| Qwen-72B-Chat             | **72.0**    | 71.0        | **52.7**    | <u>30.7</u> | <u>15.3</u> | <u>48.3</u> |
+| **Mathmatical Models**    |             |             |             |             |             |             |
+| MammoTH-7B                | 26.7        | 24.3        | 3.0         | 1.3         | 1.0         | 11.3        |
+| MammoTH-13B               | 35.0        | 41.7        | 5.0         | 4.0         | 4.3         | 18.0        |
+| Metamath-Llemma-7B        | 48.7        | 49.3        | 9.0         | 9.0         | 4.0         | 24.0        |
+| MammoTH-70B               | 35.7        | 60.7        | 11.0        | 8.3         | 5.3         | 24.2        |
+| InternLM2-Chat-Math-7B    | 58.7        | 67.0        | 40.3        | 18.0        | 7.3         | 38.3        |
+| Deepseek-Math-7B-Instruct | 61.0        | 74.0        | 29.7        | 21.3        | 9.7         | 39.1        |
+| InternLM2-Chat-Math-20B   | 53.7        | 70.0        | 43.0        | 24.3        | 11.3        | 40.5        |
+| Deepseek-Math-7B-RL       | <u>67.7</u> | **82.7**    | <u>44.7</u> | **31.0**    | **17.3**    | **48.7**    | -->
+
+**Models** | **Arith** | **Primary** | **Middle** | **High** | **College** | **Avg.** 
+---|---|---|---|---|---|---
+*Closed-source Models* | | | | | |
+GPT-3.5-Turbo-0125 | 72.7 | 72.3 | 27.3 | 18.3 | 14.3 | 41.0 
+GLM4 | 61.7 | 80.0 | 55.7 | 38.7 | 20.7 | 51.3 
+GPT-4-0125-Preview | 76.0 | 82.3 | 59.0 | 41.3 | 35.3 | 58.8 
+Qwen-Max-0428 | 72.3 | 86.3 | 65.0 | 45.0 | 27.3 | 59.2 
+DeepSeek-V2-API | 82.7 | **89.3** | 59.0 | 39.3 | 29.3 | 59.9 
+Claude-3-Opus | **85.7** | 85.0 | 58.0 | 42.7 | 43.7 | 63.0 
+GPT-4o-2024-05-13 | 77.7 | 87.7 | **76.3** | **59.0** | **54.0** | **70.9** 
+*Open-source Chat Models* | | | | | |
+Yi-6B-Chat | 35.3 | 36.3 | 7.0 | 3.0 | 4.3 | 17.2 
+ChatGLM3-6B | 38.0 | 41.0 | 13.7 | 5.3 | 1.7 | 19.9 
+DeepSeek-7B-Chat | 48.3 | 47.7 | 8.7 | 4.3 | 2.7 | 22.3 
+Qwen-7B-Chat | 50.7 | 50.7 | 22.0 | 9.3 | 6.0 | 27.7 
+InternLM2-Chat-7B | 52.0 | 66.3 | <u>30.0</u> | <u>13.7</u> | <u>8.7</u> | <u>34.1</u> 
+Llama-3-8B-Instruct | <u>54.7</u> | <u>71.0</u> | 25.0 | <u>19.0</u> | <u>14.0</u> | <u>36.7</u> 
+Baichuan2-13B-Chat | 40.0 | 44.7 | 13.7 | 4.7 | 1.7 | 20.9 
+Yi-34B-Chat | 50.7 | 62.0 | 23.0 | 14.7 | 7.7 | 31.6 
+Qwen-14B-Chat | <u>63.7</u> | 61.7 | <u>39.0</u> | 21.0 | 12.0 | 39.5 
+InternLM2-Chat-20B | 62.3 | <u>72.7</u> | 37.7 | <u>24.7</u> | <u>13.0</u> | <u>42.1</u> 
+DeepSeek-67B-Chat | 62.0 | 72.7 | 33.3 | 21.3 | 12.0 | 40.3 
+Qwen-72B-Chat | **72.0** | 71.7 | 53.7 | 32.0 | 19.0 | 49.7 
+Llama-3-70B-Instruct | 70.3 | **86.0** | 53.0 | 38.7 | **34.0** | 56.4 
+Qwen1.5-110B-Chat | 70.3 | 82.3 | **64.0** | **47.3** | 28.0 | **58.4** 
+*Mathematical Models* | | | | | |
+MammoTH-7B | 27.0 | 24.3 | 2.7 | 1.7 | 0.7 | 11.3 
+MammoTH-13B | 35.0 | 43.0 | 5.0 | 4.7 | 5.0 | 18.5 
+MammoTH-70B | 35.7 | 60.0 | 11.0 | 10.7 | 6.0 | 24.7 
+Metamath-Llemma-7B | 51.7 | 51.0 | 8.3 | 8.3 | 5.0 | 24.9 
+InternLM2-Chat-Math-7B | 53.7 | 67.0 | 41.3 | 18.3 | 8.0 | 37.7 
+DeepSeek-Math-7B-Instruct | 61.0 | 74.0 | 30.3 | 24.7 | 14.3 | 40.9 
+InternLM2-Chat-Math-20B | 58.7 | 70.0 | 43.7 | 24.7 | 12.7 | 41.9 
+DeepSeek-Math-7B-RL | <u>68.0</u> | <u>83.3</u> | <u>44.3</u> | <u>33.0</u> | <u>23.0</u> | <u>50.3</u> 
+
+
+
+**MathBench-T** demonstrates the performance of the model on theoretical problems
+
+**Models** | **Primary** | **Middle** | **High** | **College** | **Avg.** 
+---|---|---|---|---|---
+*Closed-source Models* | | | | |
+GPT-3.5-Turbo-0125 | 70.1 | 56.7 | 47.3 | 52.5 | 56.7 
+GLM4 | 88.6 | 79.5 | 63.7 | 60.6 | 73.1 
+GPT-4-0125-Preview | 87.2 | 81.0 | 72.0 | 73.3 | 78.4 
+Claude-3-Opus | 86.0 | 79.0 | 72.6 | 77.4 | 78.7 
+DeepSeek-V2-API | 88.9 | 83.7 | 70.3 | 76.3 | 79.8 
+Qwen-Max-0428 | 90.4 | 83.2 | 73.4 | 74.8 | 80.4 
+GPT-4o-2024-05-13 | **92.2** | **88.3** | **82.0** | **85.6** | **87.0** 
+*Open-source Chat Models* | | | | |
+DeepSeek-7B-Chat | 33.3 | 26.0 | 14.4 | 13.6 | 21.8 
+ChatGLM3-6B | 41.6 | 32.4 | 20.2 | 12.0 | 26.6 
+Yi-6B-Chat | 48.0 | 33.5 | 21.8 | 23.9 | 31.8 
+Qwen-7B-Chat | 53.1 | 43.5 | 32.9 | 31.2 | 40.2 
+Llama-3-8B-Instruct | 60.2 | 51.3 | 43.5 | 53.6 | 52.1 
+InternLM2-Chat-7B | <u>67.3</u> | <u>55.8</u> | <u>45.4</u> | <u>42.7</u> | <u>52.8</u> 
+Baichuan2-13B-Chat | 45.4 | 36.9 | 24.1 | 21.0 | 31.9 
+InternLM2-Chat-20B | 64.5 | 56.2 | <u>49.9</u> | 43.2 | 53.4 
+Yi-34B-Chat | 70.9 | 57.0 | 43.6 | 46.8 | 54.6 
+Qwen-14B-Chat | <u>71.6</u> | <u>64.0</u> | 49.7 | 49.4 | <u>58.7</u> 
+DeepSeek-67B-Chat | 78.1 | 65.7 | 55.6 | 64.6 | 66.0 
+Llama-3-70B-Instruct | 71.4 | 64.3 | 62.1 | 71.2 | 67.2 
+Qwen-72B-Chat | 90.9 | 80.9 | 67.1 | 69.8 | 77.2 
+Qwen-1.5-110B-Chat | **93.4** | **85.0** | **76.5** | **81.5** | **84.1** 
+*Mathematical Models* | | | | |
+MammoTH-7B | 11.6 | 9.1 | 8.4 | 6.3 | 8.8 
+MammoTH-13B | 27.5 | 18.6 | 15.0 | 17.1 | 19.5 
+MetaMath-Llemma-7B | 36.6 | 33.5 | 28.8 | 25.9 | 31.2 
+MammoTH-70B | 58.1 | 47.1 | 39.3 | 44.6 | 47.3 
+InternLM2-Chat-Math-7B | 65.6 | 60.2 | 51.7 | 46.5 | 56.0 
+DeepSeek-Math-7B-Instruct | 73.3 | 58.4 | 49.3 | 50.3 | 57.8 
+InternLM2-Chat-Math-20B | 73.2 | 70.5 | 60.6 | 53.0 | 64.3 
+DeepSeek-Math-7B-RL | <u>79.6</u> | <u>72.0</u> | <u>61.3</u> | <u>68.7</u> | <u>70.4</u> 
+
+
+## 🔊Average Application Scores with Stages
  Models exhibit similar performances in Arithmetic and Primary stages, while demonstrating a clear performance decline from Primary to College stages.
 <div align="center">
- <img src="https://github.com/hpcaitech/ColossalAI/assets/28834990/ad967953-2857-4e85-86d2-e1a9504ff38b" width="800"/>
+ <img src="https://github.com/open-compass/MathBench/assets/28834990/f7d83014-f4c1-45d5-bf3b-386c95c032f9" width="800"/>
 </div>
+
+## Bilingual Performance
+
+## 📊Model Size vs. Average Score
+
+The comparison chart of model parameter size versus performance
+on MathBench for selected representative models, with
+models from the same series connected by lines of the
+same color. The horizontal red dotted line represents
+the score of GPT-4-0125-Preview.
+<div align="center">
+ <img src="https://github.com/open-compass/opencompass/assets/28834990/f00ec39b-5c8f-4990-82fc-7fca826c3c64" width="800"/>
+</div>
+
+## 📈Bilingual Performance
+Below is a comparison of the bilingual results of numerous Chat models on MathBench, sorted in ascending order of language average scores. 
+![image](https://github.com/open-compass/opencompass/assets/28834990/38ff010f-a2c8-440d-a1f9-671f9b438957)
+
+
+
 
 ## 🖋Inference MathBench with OpenCompass
 [OpenCompass](https://github.com/open-compass/opencompass) is a toolkit for evaluating the performance of large language models (LLMs). There are steps for inference MathBench with OpenCompass:

@@ -64,6 +64,31 @@
       width: 200px;
       font-weight: 600;
     }
+    .toggle-btn-parent {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .toggle-btn {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .toggle-btn .material-icons {
+      margin-right: 5px;
+    }
+
+    .toggle-btn:hover {
+      background-color: #0056b3;
+    }
 
 .paper-btn-parent {
     display: flex;
@@ -169,33 +194,61 @@
 <div class="container">
   <div id="content" class="container-fluid d-flex flex-column align-items-center gap-3">
     <h1 class="text-nowrap mt-5">🏆 MathBench Leaderboard 🏆</h1>
-    <h3 class="fw-light text-nowrap"><small id="warning">MathBench: A Comprehensive Multi-Level Difficulty Mathematics Evaluation Dataset<br></small></h3>
-    <div style="clear: both">
+    <h3 class="fw-light text-nowrap"><small id="warning">MathBench: Evaluating the Theory and Application Proficiency
+      of LLMs with a Hierarchical Mathematics Benchmark<br></small></h3>
+     <div style="clear: both">
       <div class="paper-btn-parent">
-      <a class="paper-btn" href="">
-          <span class="material-icons"> description </span> 
-           Paper
-      </a>
-      <a class="paper-btn" href="https://github.com/open-compass/MathBench">
-          <span class="material-icons"> code </span>
-          Code
-      </a>
-      <a class="paper-btn" href="./index.html">
-          <span class="material-icons"> description </span> 
-           Project Page
-      </a>
-      <!-- <a class="paper-btn" href="./leaderboard_zh.html">
-          <span class="material-icons"> description </span> 
-          Leaderboard (ZH)
-      </a> -->
+        <a class="paper-btn" href="">
+            <span class="material-icons"> description </span> 
+             Paper
+        </a>
+        <a class="paper-btn" href="https://github.com/open-compass/MathBench">
+            <span class="material-icons"> code </span>
+            Code
+        </a>
       </div>
-  </div>
+        <div class="toggle-btn-parent">
+          <button class="toggle-btn" id="toggleButton">
+              <span class="material-icons"> swap_horiz </span>
+              Show Theory Scores
+          </button>
+        </div>
+  <!-- <div class="paper-btn-parent">
+    <a class="paper-btn" href="">
+        <span class="material-icons"> description </span> 
+         Paper
+    </a>
+    <a class="paper-btn" href="https://github.com/open-compass/MathBench">
+        <span class="material-icons"> code </span>
+        Code
+    </a>
+    <div class="btn-group" role="group" id="Benchmark">
+      <input
+        type="radio"
+        class="btn-check"
+        name="btnradio"
+        id="MathBenchA"
+        checked
+      />
+      <label class="btn btn-outline-primary" for="MathBenchA">MathBenchA</label>
+      <input type="radio" class="btn-check" name="btnradio" id="MathBenchT" />
+      <label class="btn btn-outline-primary" for="MathBenchT">MathBenchT</label>
+      <input type="radio" class="btn-check" name="btnradio" id="Average" />
+      <label class="btn btn-outline-primary" for="Average">Average</label>
+    </div>
+  </div> -->
+  <!-- <div class="paper-btn-parent">
+    <a class="paper-btn" href="#" id="theory-btn">
+      <span class="material-icons"> school </span>
+      Theory
+    </a>
+  </div> -->
     </div>
     <div>
       <div  id="chart" style="width:100%;height:600px;"></div>
       <div class="container-fluid d-flex flex-row flex-nowrap">
         <div class="container-fluid d-flex flex-column align-items-center">
-          <label for="origin" class="text-danger mb-3"> MathBench Scores</label>
+          <label for="origin" class="text-danger mb-3"> MathBench Application Scores</label>
           <table id="origin" class="table table-responsive table-striped table-bordered flex-shrink-1 border border-danger border-3"></table>
         </div>
       </div>
@@ -203,7 +256,7 @@
         <h4>📝 Notes</h4>
         <p class="inline-block mt-3">
           <ol>
-            <li>Models labeled with 🌍 are API-Based models, while others are open-sourced. </li>
+            <li>Models labeled with 🌍 are Closed-source models, while others are Open-sourced. </li>
             <li>Models labeled with 🧮 are Mathematics-Specialization models, while others are normal Chat models. </li>
             <li>Feel free to <a href="https://github.com/open-compass/MathBench/issues/new">file a request</a> to add your models on our leaderboard. </li>
           </ol>
@@ -226,7 +279,7 @@
 
     var option = {
       legend: {
-        data: ['CE Average*']
+        data: ['Average*']
       },
       grid: {
         left: '1%',
@@ -246,7 +299,7 @@
         }
       },
       yAxis: {
-        name: 'CE Average',
+        name: 'Average',
         type: 'value',
         show: true,
         nameTextStyle: {
@@ -260,7 +313,7 @@
         }
       },
       legend: {
-        data: ['open_source', 'API_based'],
+        data: ['open_source', 'closed_source'],
         itemStyle: {
           opacity: 1.0
         },
@@ -299,7 +352,7 @@
           }
         },
         {
-          name: 'API_based',
+          name: 'closed_source',
           type: 'scatter',
           data: [],
           itemStyle: {
@@ -330,19 +383,20 @@
     
     const theaders = [
       'Model',
-      'Calculate',
+      'Arithmetic',
       'Primary',
       'Middle',
       'High',
       'College',
-      'CE Average',
+      'Average',
     ]
 
     var data = [];
 
-    var currentUrl = 'scores.csv';
+    var currentUrl = 'MathBench-A.csv';
+    
 
-    updateTable(originTable, currentUrl, 'CE Average');
+    updateTable(originTable, currentUrl, 'Average');
     updateChart(currentUrl);
 
     function clearTable() {
@@ -387,7 +441,7 @@
           results.data.sort(function (a, b) {
             if (parseFloat(a['Size']) - parseFloat(b['Size']) < 0) return -1;
             if (parseFloat(a['Size']) - parseFloat(b['Size']) > 0) return 1;
-            return a['CE Average'] - b['CE Average']
+            return a['Average'] - b['Average']
           });
           displayChart(results.data, url);
         }
@@ -452,7 +506,7 @@
         dataRow.appendChild(modelCell);
         var instructCell = document.createElement('td');
         instructCell.classList.add('text-danger');
-        instructCell.textContent = row['Calculate'];
+        instructCell.textContent = row['Arithmetic'];
         dataRow.appendChild(instructCell);
         var instructCell = document.createElement('td');
         instructCell.classList.add('text-danger');
@@ -494,8 +548,8 @@
 
       var maxScore = 0.0;
       data.forEach(function(row) {
-        if (parseFloat(row['CE Average']) > maxScore) {
-          maxScore = parseFloat(row['CE Average']);
+        if (parseFloat(row['Average']) > maxScore) {
+          maxScore = parseFloat(row['Average']);
         }
       });
       option.yAxis.max = maxScore + 1;
@@ -505,25 +559,25 @@
           if (row['opensourced'] == 'FALSE') {
             option.series[1].markLine.data.push({
               name: row['Model'],
-              yAxis: row['CE Average']
+              yAxis: row['Average']
             });
           } else {
             option.series[0].markLine.data.push({
               name: row['Model'],
-              yAxis: row['CE Average']
+              yAxis: row['Average']
             });
           }
         } else {
           if (row['opensourced'] == 'FALSE') {
             option.series[1].data.push({
               name: row['Model'],
-              value: [row['Size'], row['CE Average']],
+              value: [row['Size'], row['Average']],
               size: row['Size'],
             });
           } else {
             option.series[0].data.push({
               name: row['Model'],
-              value: [row['Size'], row['CE Average']],
+              value: [row['Size'], row['Average']],
               size: row['Size'],
             });
           }
@@ -539,13 +593,13 @@
         data.forEach(function(row) {
           if (row['Size'] == size) {
             if(row['opensourced'] == 'FALSE') {
-              if (parseFloat(row['CE Average']) > maxScoreIns) {
-                maxScoreIns = parseFloat(row['CE Average']);
+              if (parseFloat(row['Average']) > maxScoreIns) {
+                maxScoreIns = parseFloat(row['Average']);
                 maxModelIns = row['Model'];
               }
             } else {
-              if (parseFloat(row['CE Average']) > maxScore) {
-                maxScore = parseFloat(row['CE Average']);
+              if (parseFloat(row['Average']) > maxScore) {
+                maxScore = parseFloat(row['Average']);
                 maxModel = row['Model'];
               }
             }
@@ -603,6 +657,64 @@
       });
       option && myChart.setOption(option);
     }
+    // Toggle functionality for datasets
+var currentDataset = 'MathBench-A.csv';
+var isApplicationScores = true;
+
+function toggleDataset() {
+  if (isApplicationScores) {
+    currentDataset = 'MathBench-T.csv';
+    document.querySelector('label[for="origin"]').textContent = 'MathBench Theory Scores';
+    toggleButton.textContent = 'Show Application Scores';
+    hideCalculateColumn();
+  } else {
+    currentDataset = 'MathBench-A.csv';
+    document.querySelector('label[for="origin"]').textContent = 'MathBench Application Scores';
+    toggleButton.textContent = 'Show Theory Scores';
+    showCalculateColumn();
+  }
+  isApplicationScores = !isApplicationScores;
+  updateTable(originTable, currentDataset, 'Average');
+  updateChart(currentDataset);
+}
+
+function hideCalculateColumn() {
+  var headerRow = originTable.querySelector('thead tr');
+  var calculateHeader = headerRow.querySelector('th:nth-child(3)');
+  if (calculateHeader) {
+    calculateHeader.style.display = 'none';
+  }
+  var rows = originTable.querySelectorAll('tbody tr');
+  rows.forEach(row => {
+    var calculateCell = row.querySelector('td:nth-child(3)');
+    if (calculateCell) {
+      calculateCell.style.display = 'none';
+    }
+  });
+}
+
+function showCalculateColumn() {
+  var headerRow = originTable.querySelector('thead tr');
+  var calculateHeader = headerRow.querySelector('th:nth-child(3)');
+  if (calculateHeader) {
+    calculateHeader.style.display = '';
+  }
+  var rows = originTable.querySelectorAll('tbody tr');
+  rows.forEach(row => {
+    var calculateCell = row.querySelector('td:nth-child(3)');
+    if (calculateCell) {
+      calculateCell.style.display = '';
+    }
+  });
+}
+
+// Initial setup: hide Calculate column if starting with MathBench-T.csv
+if (currentDataset === 'MathBench-T.csv') {
+  hideCalculateColumn();
+}
+// Add event listener to the toggle button
+document.getElementById('toggleButton').addEventListener('click', toggleDataset);
+
 
     window.addEventListener("resize", () => {
       this.myChart.resize();
