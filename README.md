@@ -14,9 +14,9 @@
 
 <div align="center">
 
-[🏰[Project Page](https://github.com/open-compass/MathBench/)]
+<!-- [🏰[Project Page](https://github.com/open-compass/MathBench/)] -->
+[📄[Paper](https://arxiv.org/abs/2405.12209)]
 [📚[LeaderBoard](https://open-compass.github.io/MathBench/)]
-
 </div>
 
 ## ☀️Introduction
@@ -30,6 +30,7 @@ MathBench is an `All in One` math dataset for language model evaluation, with:
 <!-- CE utilizes a circular evaluation mechanism to mitigate the model's biased tendencies, such as consistently favoring option A or yielding entirely different results across multiple responses. During the evaluation of a multiple-choice question, CE performs several assessments. After each question-answer interaction, the order of the options is rearranged through a "circular" mechanism (for instance, ABCD becomes BCDA). A question is only deemed correct if all responses across these evaluations are accurate. Within MathBench, we employ CE-4, meaning each question undergoes four rounds of evaluation. -->
 
 ## 🚀 What's New
+- **[2024.5.20]** MathBench has been accepted by **ACL2024** (findings), We also released profermance of more models such as GPT-4o, Qwen-Max-0428, Llama3 and DeepSeek-V2-API on MathBench. 🎉🎉🎉
 - **[2024.3.14]** We release the complete version of MathBench, which includes a total of 3,709 problems in both Chinese and English. The dataset covers both **applied and theoretical** math problems. Each problem is labeled with a **three-level taxonomy**. 🎉🎉🎉
 - **[2024.1.26]** We release the **Application questions** of MathBench. 🎉🎉🎉
 
@@ -42,107 +43,7 @@ MathBench is an `All in One` math dataset for language model evaluation, with:
 ## 📒Model Performance
 We use zero-shot CoT set for multiple-choice questions and few-shot (8) CoT set for all textual questions. The results are shown in the following table, we present the results with common Accuracy and Circular Evaluation (CE) metrics. 
 
-<!-- Here is the overall average result of **MathBench**: -->
-
-<!-- 
-| Models                      | ACC Average | CE Average |
-|-----------------------------|-------------|------------|
-| **API Models**              |             |            |
-| GPT-3.5                     | 66.1        | 48.1       |
-| Qwen-Max                    | 75.2        | 62.9       |
-| GLM4                        | 73.0        | 60.3       |
-| Claude-3-Opus               | 77.4        | 64.2       |
-| GPT-4                       | **78.8**    | **68.9**   |
-| **Open-Source Chat Models** |             |            |
-| ChatGLM3-6B                 | 43.7        | 24.3       |
-| Yi-6B-Chat                  | 42.5        | 23.5       |
-| InternLM2-Chat-7B           | 59.3        | 42.7       |
-| Qwen-7B-Chat                | 51.8        | 34.3       |
-| Deepseek-7B-Chat            | 43.5        | 23.9       |
-| Baichuan2-13B-Chat          | 49.5        | 32.1       |
-| Qwen-14B-Chat               | 64.1        | 44.4       |
-| InternLM2-Chat-20B          | **64.7**    | **47.4**   |
-| Yi-34B-Chat                 | 54.9        | 39.0       |
-| Deepseek-67B-Chat           | 65.3        | 52.0       |
-| Qwen-72B-Chat               | **72.2**       | **61.1**       |
-| **Mathematical Models**     |             |            |
-| MammoTH-7B                  | 28.5        | 11.7       |
-| Metamath-Llemma-7B          | 39.4        | 25.1       |
-| InternLM2-Chat-Math-7B      | 64.0        | 46.0       |
-| Deepseek-Math-7B-Instruct   | 63.9        | 48.3       |
-| Deepseek-Math-7B-RL         | **69.6**    | **58.7**   |
-| MammoTH-13B                 | 38.9        | 20.2       |
-| InternLM2-Chat-Math-20B     | 64.6        | 51.8       |
-| MammoTH-70B                 | 49.9        | 34.2       | -->
-
-
-
-<!-- Here is the CE result of **MathBench** with 5-level difficulty divisions🪜:
-
-
-| Models                      | Arithmetic | Primary | Middle | High  | College |
-|-----------------------------|------------|---------|--------|-------|---------|
-| **API Models**              |            |         |        |       |         |
-| GPT-3.5                     | 70.3       | 67.9    | 39.3   | 30.6  | 32.2    |
-| Qwen-Max                    | 69.3       | 84.2    | 62.7   | 51.4  | 47.0    |
-| GLM4                        | 61.3       | 83.0    | 64.0   | 52.1  | 41.2    |
-| Claude-3-Opus               | **84.7**   | **86.1**| 63.5   | 48.2  | 38.7    |
-| GPT-4                       | 76.3       | 82.9    | **69.8**| **56.6**| **59.0**|
-| **Open-Source Chat Models** |            |         |        |       |         |
-| ChatGLM3-6B                 | 41.0       | 40.5    | 21.4   | 11.5  | 6.3     |
-| Yi-6B-Chat                  | 35.7       | 41.1    | 20.3   | 11.5  | 9.1     |
-| InternLM2-Chat-7B           | 53.0       | 67.5    | 41.0   | 29.6  | 22.6    |
-| Qwen-7B-Chat                | 51.3       | 50.2    | 32.6   | 20.2  | 17.3    |
-| Deepseek-7B-Chat            | 46.0       | 39.3    | 15.5   | 9.6   | 9.2     |
-| Baichuan2-13B-Chat          | 46.0       | 54.2    | 29.5   | 16.6  | 14.3    |
-| Qwen-14B-Chat               | 64.7       | 66.1    | 49.2   | 32.8  | 27.2    |
-| InternLM2-Chat-20B          | 62.7       | 70.0    | 47.4   | 33.7  | 23.3    |
-| Yi-34B-Chat                 | 51.0       | 64.8    | 38.0   | 23.2  | 17.8    |
-| Deepseek-67B-Chat           | 61.3       | 77.2    | 48.4   | 36.3  | 36.8    |
-| Qwen-72B-Chat               | **72.0**   | **80.1**   | **64.8**| **47.8**| **40.8**    |
-| **Mathematical Models**     |            |         |        |       |         |
-| MammoTH-7B                  | 26.7       | 18.1    | 5.3    | 4.8   | 3.7     |
-| Metamath-Llemma-7B          | 48.7       | 35.3    | 16.1   | 15.5  | 10.1    |
-| InternLM2-Chat-Math-7B      | 53.7       | 66.0    | 49.0   | 34.3  | 26.9    |
-| Deepseek-Math-7B-Instruct   | 61.0       | 73.7    | 42.2   | 34.9  | 29.9    |
-| Deepseek-Math-7B-RL         | **67.7**   | **80.8**| **57.2** | **45.4**| **42.7**|
-| MammoTH-13B                 | 35.0       | 34.8    | 10.7   | 9.9   | 10.6    |
-| InternLM2-Chat-Math-20B     | 58.7       | 71.1    | 55.5   | 41.8  | 31.9    |
-| MammoTH-70B                 | 35.7       | 59.3    | 28.1   | 23.6  | 24.5    | -->
-
-
-
 Here is the CE result of **MathBench**, **MathBench-A** demonstrates the performance of the model on application problems
-
-<!-- | **Models**                | **Arith**   | **Primary** | **Middle**  | **High**    | **College** | **Avg.**    |
-| ------------------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
-| **Closed-source Models**  |             |             |             |             |             |             |
-| GPT-3.5                   | 70.3        | 69.0        | 27.7        | 17.3        | 17.0        | 40.3        |
-| Qwen-Max                  | 69.3        | 80.7        | 50.3        | 33.7        | 20.7        | 50.9        |
-| GLM4                      | 61.3        | 79.0        | 54.0        | 41.3        | 21.0        | 51.3        |
-| Claude-3-Opus             | **84.7**    | **85.3**    | 54.0        | 33.3        | 24.0        | 56.3        |
-| GPT-4                     | 76.3        | 80.3        | **61.3**    | **42.3**    | **38.3**    | **59.7**    |
-| **Open-source Models**    |             |             |             |             |             |             |
-| Yi-6B-Chat                | 35.7        | 36.0        | 7.3         | 3.7         | 1.3         | 16.8        |
-| ChatGLM3-6B               | 41.0        | 42.7        | 11.7        | 3.0         | 0.5         | 19.8        |
-| Deepseek-7B-Chat          | 46.0        | 45.7        | 5.0         | 3.7         | 1.8         | 20.4        |
-| Qwen-7B-Chat              | 51.3        | 48.7        | 22.0        | 9.7         | 5.5         | 27.4        |
-| InternLM2-Chat-7B         | <u>53.7</u> | <u>67.7</u> | <u>25.0</u> | <u>14.3</u> | <u>6.3</u>  | <u>33.4</u> |
-| Baichuan2-13B-Chat        | 46.0        | 50.3        | 14.7        | 3.3         | 3.7         | 23.6        |
-| Yi-34B-Chat               | 51.0        | 60.3        | 23.7        | 7.3         | 2.7         | 29.0        |
-| Qwen-14B-Chat             | <u>64.7</u> | 61.3        | 36.7        | 19.7        | 7.8         | 38.0        |
-| InternLM2-Chat-20B        | 62.7        | <u>75.7</u> | <u>39.7</u> | <u>23.7</u> | <u>13.7</u> | <u>43.1</u> |
-| Deepseek-67B-Chat         | 61.3        | <u>72.6</u> | 33.0        | 19.0        | 12.7        | 39.7        |
-| Qwen-72B-Chat             | **72.0**    | 71.0        | **52.7**    | <u>30.7</u> | <u>15.3</u> | <u>48.3</u> |
-| **Mathmatical Models**    |             |             |             |             |             |             |
-| MammoTH-7B                | 26.7        | 24.3        | 3.0         | 1.3         | 1.0         | 11.3        |
-| MammoTH-13B               | 35.0        | 41.7        | 5.0         | 4.0         | 4.3         | 18.0        |
-| Metamath-Llemma-7B        | 48.7        | 49.3        | 9.0         | 9.0         | 4.0         | 24.0        |
-| MammoTH-70B               | 35.7        | 60.7        | 11.0        | 8.3         | 5.3         | 24.2        |
-| InternLM2-Chat-Math-7B    | 58.7        | 67.0        | 40.3        | 18.0        | 7.3         | 38.3        |
-| Deepseek-Math-7B-Instruct | 61.0        | 74.0        | 29.7        | 21.3        | 9.7         | 39.1        |
-| InternLM2-Chat-Math-20B   | 53.7        | 70.0        | 43.0        | 24.3        | 11.3        | 40.5        |
-| Deepseek-Math-7B-RL       | <u>67.7</u> | **82.7**    | <u>44.7</u> | **31.0**    | **17.3**    | **48.7**    | -->
 
 **Models** | **Arith** | **Primary** | **Middle** | **High** | **College** | **Avg.** 
 ---|---|---|---|---|---|---
@@ -259,7 +160,7 @@ pip install -e .
 ```
 # Download dataset from release file and copy to data/ folder
 mkdir data
-cp -rf mathbench ./data/ 
+cp -rf mathbench_v1 ./data/ 
 ```
 3. Inference MathBench
 ```
@@ -281,4 +182,14 @@ python run.py --datasets mathbench_gen \
 
 
 # Citation and Tech Report
-To be appended.
+If you use MathBench in your research, please cite the following paper:
+```
+@misc{liu2024mathbench,
+      title={MathBench: Evaluating the Theory and Application Proficiency of LLMs with a Hierarchical Mathematics Benchmark}, 
+      author={Hongwei Liu and Zilong Zheng and Yuxuan Qiao and Haodong Duan and Zhiwei Fei and Fengzhe Zhou and Wenwei Zhang and Songyang Zhang and Dahua Lin and Kai Chen},
+      year={2024},
+      eprint={2405.12209},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
