@@ -30,7 +30,7 @@ MathBench is an `All in One` math dataset for language model evaluation, with:
 <!-- CE utilizes a circular evaluation mechanism to mitigate the model's biased tendencies, such as consistently favoring option A or yielding entirely different results across multiple responses. During the evaluation of a multiple-choice question, CE performs several assessments. After each question-answer interaction, the order of the options is rearranged through a "circular" mechanism (for instance, ABCD becomes BCDA). A question is only deemed correct if all responses across these evaluations are accurate. Within MathBench, we employ CE-4, meaning each question undergoes four rounds of evaluation. -->
 
 ## 🚀 What's New
-- **[2024.5.20]** MathBench has been accepted by **ACL2024** (findings), We also released profermance of more models such as GPT-4o, Qwen-Max-0428, Llama3 and DeepSeek-V2-API on MathBench. 🎉🎉🎉
+- **[2024.5.20]** MathBench has been accepted by **ACL2024** (findings), We also released performance of more models such as GPT-4o, Qwen-Max-0428, Llama3 and DeepSeek-V2-API on MathBench. 🎉🎉🎉
 - **[2024.3.14]** We release the complete version of MathBench, which includes a total of 3,709 problems in both Chinese and English. The dataset covers both **applied and theoretical** math problems. Each problem is labeled with a **three-level taxonomy**. 🎉🎉🎉
 - **[2024.1.26]** We release the **Application questions** of MathBench. 🎉🎉🎉
 
