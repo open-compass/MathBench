@@ -156,7 +156,7 @@ git clone https://github.com/open-compass/opencompass opencompass
 cd opencompass
 pip install -e .
 ```
-2. Prepare the dataset
+2. Prepare the dataset, you can download the data from [release file](https://github.com/open-compass/MathBench/releases/tag/v0.1.0)
 ```
 # Download dataset from release file and copy to data/ folder
 mkdir data
