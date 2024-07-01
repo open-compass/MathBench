@@ -177,8 +177,9 @@ python run.py --datasets mathbench_gen \
 --batch-size 8 \  # Batch size
 --no-batch-padding \  # Don't enable batch padding, infer through for loop to avoid performance loss
 --num-gpus 1  # Number of minimum required GPUs
---summarizer summarizers.mathbench_v1 # Summarizer for MathBench
+--summarizer summarizers.groups.mathbench_v1_2024 # Summarizer for MathBench-T and MathBench-A
 ```
+If your want to see bilingual results for MathBench-A&T, replace `summarizers.groups.mathbench_v1_2024` with `summarizers.groups.mathbench_v1_2024_lang`.
 
 
 # Citation and Tech Report
