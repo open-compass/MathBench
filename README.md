@@ -179,7 +179,9 @@ python run.py --datasets mathbench_gen \
 --num-gpus 1  # Number of minimum required GPUs
 --summarizer summarizers.groups.mathbench_v1_2024 # Summarizer for MathBench-T and MathBench-A
 ```
-If your want to see bilingual results for MathBench-A&T, replace `summarizers.groups.mathbench_v1_2024` with `summarizers.groups.mathbench_v1_2024_lang`.
+If you want to see bilingual results for MathBench-A&T, replace `summarizers.groups.mathbench_v1_2024` with `summarizers.groups.mathbench_v1_2024_lang`. To access detailed results for each sub-dataset, use `summarizers.mathbench_v1`.
+
+You can use the `-r` command to reuse predictions and display different results when changing the summarizer.
 
 
 # Citation and Tech Report
