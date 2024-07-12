@@ -28,3 +28,8 @@ InternLM2-Chat-Math-7B,65.6,60.2,51.7,46.5,56.0,https://github.com/InternLM/Inte
 DeepSeek-Math-7B-Instruct,73.3,58.4,49.3,50.3,57.8,https://github.com/deepseek-ai/DeepSeek-Math,TRUE,TRUE
 InternLM2-Chat-Math-20B,73.2,70.5,60.6,53.0,64.3,https://github.com/InternLM/InternLM-Math,TRUE,TRUE
 DeepSeek-Math-7B-RL,79.6,72.0,61.3,68.7,70.4,https://github.com/deepseek-ai/DeepSeek-Math,TRUE,TRUE
+Qwen2-7B-Instruct,89.4,82.9,71.2,70.1,78.4,https://github.com/QwenLM/Qwen2,TRUE,FALSE
+Yi-1.5-9B-Chat,81.6,74.0,62.7,69.8,72.0,https://github.com/01-ai/Yi-1.5,TRUE,FALSE
+Qwen2-72B-Instruct,93.4,89.9,84.4,87.7,88.8,https://github.com/QwenLM/Qwen2,TRUE,FALSE
+GLM-4-9B-Chat,85.0,78.0,65.8,71.4,75.0,https://github.com/THUDM/GLM-4,TRUE,FALSE 
+Yi-1.5-34B-Chat,69.7,82.3,50.0,35.3,23.7,https://github.com/01-ai/Yi-1.5,TRUE,FALSE
