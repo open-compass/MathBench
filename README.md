@@ -207,12 +207,11 @@ You can use the `-r` command to reuse predictions and display different results 
 # Citation and Tech Report
 If you use MathBench in your research, please cite the following paper:
 ```
-@misc{liu2024mathbench,
-      title={MathBench: Evaluating the Theory and Application Proficiency of LLMs with a Hierarchical Mathematics Benchmark}, 
-      author={Hongwei Liu and Zilong Zheng and Yuxuan Qiao and Haodong Duan and Zhiwei Fei and Fengzhe Zhou and Wenwei Zhang and Songyang Zhang and Dahua Lin and Kai Chen},
-      year={2024},
-      eprint={2405.12209},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+@inproceedings{liu2024mathbench,
+  title={MathBench: Evaluating the Theory and Application Proficiency of LLMs with a Hierarchical Mathematics Benchmark},
+  author={Liu, Hongwei and Zheng, Zilong and Qiao, Yuxuan and Duan, Haodong and Fei, Zhiwei and Zhou, Fengzhe and Zhang, Wenwei and Zhang, Songyang and Lin, Dahua and Chen, Kai},
+  booktitle={Findings of the Association for Computational Linguistics ACL 2024},
+  pages={6884--6915},
+  year={2024}
 }
 ```
